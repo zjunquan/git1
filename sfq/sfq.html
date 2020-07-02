@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+</head>
+    <style>
+        .stage{
+            width: 700px;
+            background: red;
+            /* 溢出隐藏 */
+            overflow: hidden;
+            position: relative;
+        }
+        li{
+            width: 200px;
+            /* 溢出隐藏 */
+            overflow: hidden;
+            /* 子绝父相 */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        img{
+            max-width: none;
+            width: 200px;
+            display: block;
+        }
+        li:first-child {
+            position: relative;
+            /* 相对定位 */
+            /* 第一张的位置不动 */
+        }
+        li:nth-child(2) {
+            left: 200px;
+        }
+        
+        li:nth-child(3) {
+            left: 300px;
+        }
+
+        li:nth-child(4) {
+            left: 400px;
+        }
+        li:nth-child(5) {
+            left: 500px;
+        }
+        li:nth-child(6) {
+            left: 600px;
+        }
+    </style>
+<body>
+    <ul class="stage">
+        <li><img src="img/datouwang1.jpg" alt=""></li>
+        <li><img src="img/datouwang2.jpg" alt=""></li>
+        <li><img src="img/datouwang3.jpg" alt=""></li>
+        <li><img src="img/datouwang4.jpg" alt=""></li>
+        <li><img src="img/datouwang5.jpg" alt=""></li>
+        <li><img src="img/datouwang6.jpg" alt=""></li>
+    </ul>
+    <script>
+        // hover语法:$(selector).hover(inFunction,outFunction)
+        $('li').hover(function(){
+            var current=$(this).index()
+            // js里面的Foreach循环到jq里面是each(),且index跟element参数的顺序
+            $('li').each(function(index,element){
+                if(index<=current){
+                    $(element).animate({left:100*index+'px'},300)
+                }else{
+                     $(element).animate({left:100*(index-1)+200+'px'},300)
+                }
+            })
+         },function(){
+                $('li').clearQueue();
+        })
+    </script>
+</body>
+</html>
