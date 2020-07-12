@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wsbb">
+        <div class="box">
+            <img src="images/u=358542357,1821264139&fm=15&gp=0.jpg" alt="">
+            <div class="zzc">123</div>
+        </div>
+    </div>
+    <div class="wsbb">
+        <div class="box">
+            <img src="images/u=3381915417,2223569867&fm=15&gp=0.jpg" alt="">
+            <div class="zzc">123</div>
+        </div>
+    </div>
+    <div class="wsbb">
+        <div class="box">
+            <img src="images/u=2989079048,2230401580&fm=15&gp=0.jpg" alt="">
+            <div class="zzc">123</div>
+        </div>
+    </div>
+    <style>
+        html{height: 100%;}
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            
+        }
+        .wsbb{
+            perspective: 1600px;
+            transform-style: preserve-3d;
+        }
+        .box{
+            width: 300px;
+            position: relative;
+            transition: all 1s;
+            transform-style: preserve-3d;
+            margin: 0 20px;
+
+        }
+        .box img{
+            width: 100%;    
+        }
+        .box .zzc{
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: springgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform:rotateY(90deg);
+        }
+        .box:hover{
+            transform: rotateY(-90deg);
+        }
+    </style>
+</body>
+</html>

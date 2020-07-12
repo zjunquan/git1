@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点一下玩一年<p></p></button>
+    <style>
+        button{
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            position: relative;
+            background: greenyellow;
+            overflow: hidden;
+            border-radius: 15px;
+            outline: none;
+            border: none;
+            z-index: 0;
+            margin: 100px;
+        }
+        button p{
+            width: 100px;
+            height: 100px;
+            background: gold;
+            transform: scale(0);
+            display: block;
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            z-index: -1;
+            border-radius: 50%;
+            transition: transform 1s, opacity 1s;
+            bottom: 0;
+            right: 0; 
+        }
+        button:hover p {
+          /* 移上之后放大5倍 */
+        transform: scale(5);
+        /* 不透明 */
+        opacity: 1;
+      }
+    </style>
+    <script>
+        var btn=document.querySelector('button');
+        var p=btn.querySelector('p');
+        btn.onmousemove=function(event){
+            p.style.left=event.offsetX - 50 + "px";
+            p.style.top=event.offsetY - 50 + "px";
+        }
+    </script>
+</body>
+</html>

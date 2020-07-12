@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="kj left"><img src="images/u=2295344186,560928578&fm=26&gp=0.jpg"></div>
+        <div class="kj right"><img src="images/u=2989079048,2230401580&fm=15&gp=0.jpg"></div>
+        <div class="kj top"><img src="images/u=3381915417,2223569867&fm=15&gp=0.jpg"></div>
+        <div class="kj bottom"><img src="images/u=358542357,1821264139&fm=15&gp=0.jpg"></div>
+        <div class="kj front"><img src="images/u=3917644932,1202452601&fm=15&gp=0.jpg"></div>
+        <div class="kj back"><img src="images/u=52796120,3320787624&fm=26&gp=0.jpg"></div>
+    </div>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            transform-style: preserve-3d;
+            perspective-origin: 50% 50%;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            position: relative;
+            transform-style: preserve-3d;
+            margin: 0 20px;
+            transition: all 1s;
+            transform: rotateY(60deg);
+            background: rgba(173, 216, 230, 0.459);
+        }
+        div img{
+            width: 100%;
+            height: 100%;
+        }
+        .kj {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+       .left {
+        transform: rotateY(-90deg) translateZ(100px);
+        }
+        .right {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+
+      .top {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .bottom {
+        transform: rotateX(90deg) translateZ(-100px);
+      }
+      .front {
+        transform: translateZ(90px);
+
+      }
+      .back {
+        transform: rotateY(180deg) translateZ(100px);
+      }
+    </style>
+</body>
+</html>
